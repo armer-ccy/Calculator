@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">计算器</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello Woeld!</string>
+
+    <string name="button_ok">Ok</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="display"></string>
+    <string name="display_history"></string>
+
+    <drawable name="sign_clr_normal">@color/back_ground</drawable>
+    <drawable name="sign_clr_pressed">@color/pressed</drawable>
+</resources>

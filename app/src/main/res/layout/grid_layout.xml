@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--网格布局-->
+<!--使用android:layout_row和android:layout_column指定其在网格中的具体行列位置-->
+<!--
+子元素属性
+•android:layout_column
+说明：显示该子控件的列，例如android:layout_column=”0”,表示当前子控件显示在第1列，android:layout_column=”1”,表示当前子控件显示在第2列。
+•android:layout_columnSpan
+说明：该控件所占的列数，例如android:layout_columnSpan=”2”,表示当前子控件占两列。
+•android:layout_row
+说明：显示该子控件的行，例如android:layout_row=”0”,表示当前子控件显示在第1行，android:layout_row=”1”,表示当前子控件显示在第2行。
+•android:layout_rowSpan
+说明：该控件所占的列数，例如android:layout_rowSpan=”2”,表示当前子控件占两行。
+•android:layout_columnWeight
+说明：该控件的列权重，与android:layout_weight类似，例如有GridLayout上两列，都设置android:layout_columnWeight = “1”,则两列各占GridLayout宽度的一半
+•android:layout_rowWeight
+说明：该控件的行权重，原理同android:layout_columnWeight。
+-->
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="5"
+    android:rowCount="5"
+    tools:context="com.example.ccy.myapplication.MainActivity">
+
+    <Button
+        android:id="@+id/ButtonUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_ok"
+        android:id="@+id/ButtonOK"
+        android:elevation="3dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_cancel"
+        android:id="@+id/ButtonCancel"
+        android:elevation="3dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按钮"/>
+    </TableRow>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.design.widget.TextInputLayout>
+
+</GridLayout>

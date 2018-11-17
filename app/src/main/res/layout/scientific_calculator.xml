@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--科学计算器-->
+<!--网格布局-->
+<!--使用android:layout_row和android:layout_column指定其在网格中的具体行列位置-->
+<!--
+子元素属性
+•android:layout_column
+说明：显示该子控件的列，例如android:layout_column=”0”,表示当前子控件显示在第1列，android:layout_column=”1”,表示当前子控件显示在第2列。
+•android:layout_columnSpan
+说明：该控件所占的列数，例如android:layout_columnSpan=”2”,表示当前子控件占两列。
+•android:layout_row
+说明：显示该子控件的行，例如android:layout_row=”0”,表示当前子控件显示在第1行，android:layout_row=”1”,表示当前子控件显示在第2行。
+•android:layout_rowSpan
+说明：该控件所占的列数，例如android:layout_rowSpan=”2”,表示当前子控件占两行。
+•android:layout_columnWeight
+说明：该控件的列权重，与android:layout_weight类似，例如有GridLayout上两列，都设置android:layout_columnWeight = “1”,则两列各占GridLayout宽度的一半
+•android:layout_rowWeight
+说明：该控件的行权重，原理同android:layout_columnWeight。
+-->
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="5"
+    android:background="@drawable/sign_button_selector"
+    android:orientation="horizontal"
+    tools:context="com.example.ccy.myapplication.MainActivity">
+
+    <LinearLayout
+        android:layout_rowWeight="10"
+        android:layout_columnSpan="5"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@color/symbol">
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="right|top"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_button_selector"
+
+            android:id="@+id/change"
+            android:text="标/科"
+            android:textColor="@color/symbol"
+            android:textSize="20dp"
+        />
+        <android.inputmethodservice.ExtractEditText
+            android:id="@+id/display_history"
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:layout_gravity="fill_horizontal|fill_vertical"
+            android:background="@null"
+            android:gravity="right|bottom"
+
+            android:maxLines="20"
+            android:scrollbars="vertical"
+            android:text="@string/display_history"
+            android:textColor="@color/number"
+            android:textSize="30dp"
+            android:textIsSelectable="true" />
+
+        <!--android:textIsSelectable="true"     表示文字是否可以选中-->
+
+        <android.inputmethodservice.ExtractEditText
+            android:scrollbars="horizontal"
+            android:layout_columnSpan="4"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@null"
+            android:layout_gravity="fill_horizontal|fill_vertical"
+
+            android:id="@+id/display"
+            android:text="@string/display"
+            android:textColor="@color/number"
+            android:textSize="50dp"
+            android:gravity="right|bottom"
+            android:textIsSelectable="true" />
+
+        <!--android:textIsSelectable="true"     表示文字是否可以选中-->
+
+    </LinearLayout>
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/clean"
+        android:text="C"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/backspace"
+        android:text="←"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+
+        android:id="@+id/bracket"
+        android:text="()"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/per_cent"
+        android:text="%"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/pi"
+        android:text="π"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/sin"
+        android:text="sin"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/sqrt"
+        android:text="√"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/pow2"
+        android:text="x²"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/powy"
+        android:text="x^y"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/divide"
+        android:text="÷"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/cos"
+        android:text="cos"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no7"
+        android:text="7"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no8"
+        android:text="8"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no9"
+        android:text="9"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/multiply"
+        android:text="×"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/tan"
+        android:text="tan"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no4"
+        android:text="4"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no5"
+        android:text="5"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no6"
+        android:text="6"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/sub"
+        android:text="-"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/ln"
+        android:text="ln"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no1"
+        android:text="1"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no2"
+        android:text="2"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no3"
+        android:text="3"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/add"
+        android:text="+"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/lg"
+        android:text="lg"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/e"
+        android:text="e"
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/no0"
+        android:text="0"
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/point"
+        android:text="."
+        android:textColor="@color/number"
+        android:textSize="25dp"
+    />
+
+    <Button
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_button_selector"
+
+        android:id="@+id/equal"
+        android:text="="
+        android:textColor="@color/symbol"
+        android:textSize="25dp"
+    />
+
+</GridLayout>

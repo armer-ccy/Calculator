@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--框架布局-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ccy.myapplication.MainActivity">
+
+    <TextView
+        android:id="@+id/mytext0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"/>
+
+    <TextView
+        android:id="@+id/mytext1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_ok"
+        android:id="@+id/mytext2"/>
+    
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.design.widget.TextInputLayout>
+
+</FrameLayout >
